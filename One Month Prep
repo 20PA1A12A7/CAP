@@ -1,3 +1,4 @@
+#WEEK1
 1)PLUS MINUS
 #!/bin/python3
 import math
@@ -41,6 +42,48 @@ def miniMaxSum(arr):
 if __name__ == '__main__':
       arr = list(map(int, input().rstrip().split()))
       miniMaxSum(arr)
+      
+7)DIAGONAL DIFFERENCE
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+def diagonalDifference(arr):
+    sum1,sum2=0,0
+    for i in range(n):
+        for j in range(n):
+            if(i==j):
+                sum1=sum1+arr[i][j]
+            if(i+j==n-1):
+                sum2=sum2+arr[i][j]
+    return(abs(sum1-sum2))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    arr = []
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+    result = diagonalDifference(arr)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
+12)XOR STRINGS 2
+def strings_xor(s, t):
+    res = ""
+    for i in range(len(s)):
+        if s[i] == t[i]:
+            res = res+'0'
+        else:
+            res = res+'1'
+    return res
+s = input()
+t = input()
+print(strings_xor(s, t))
+
+ 
+
 
       
 
