@@ -95,6 +95,28 @@ if __name__ == '__main__':
     result = diagonalDifference(arr)
     fptr.write(str(result) + '\n')
     fptr.close()
+    
+9)PANGRAMS
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+def pangrams(s): 
+   count = [0]*26
+   for i in s:
+       if(not i.isspace()):
+            count[ord(i)-ord('a')]+=1
+            return('pangram')
+       else:
+            return('not pangram')
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    s = input()
+    result = pangrams(s)
+    fptr.write(result + '\n')
+    fptr.close()
 
 12)XOR STRINGS 2
 def strings_xor(s, t):
