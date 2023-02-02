@@ -42,7 +42,34 @@ def miniMaxSum(arr):
 if __name__ == '__main__':
       arr = list(map(int, input().rstrip().split()))
       miniMaxSum(arr)
-      
+
+5)LONELY INTEGER
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+def lonelyinteger(a):
+     a.sort()
+     sum1=0
+     sum2=0
+     if(n==1):
+        return a[0]
+     else:
+        for i in range(0,n):
+           sum1=sum1+a[i]
+           if(a[i]==a[i-1]):
+             sum2=sum2+a[i]+a[i-1]
+        return sum1-sum2
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    a = list(map(int, input().rstrip().split()))
+    result = lonelyinteger(a)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
 7)DIAGONAL DIFFERENCE
 #!/bin/python3
 import math
