@@ -146,7 +146,34 @@ if __name__ == '__main__':
     result = diagonalDifference(arr)
     fptr.write(str(result) + '\n')
     fptr.close()
-    
+
+8)COUNTING SORT 1
+import math
+import os
+import random
+import re
+import sys
+def countingSort(arr):
+    l=[]
+    l1=[]
+    for i in range(100):
+        l.append(i)
+    for i in l:
+        if i in arr:
+            x=arr.count(i)
+            l1.append(x)
+        else:
+            l1.append(0)
+    return l1     
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    arr = list(map(int, input().rstrip().split()))
+    result = countingSort(arr)
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+    fptr.close()
+
 9)PANGRAMS
 #!/bin/python3
 import math
