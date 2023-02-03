@@ -42,6 +42,30 @@ def miniMaxSum(arr):
 if __name__ == '__main__':
       arr = list(map(int, input().rstrip().split()))
       miniMaxSum(arr)
+      
+3)TIME CONVERSION
+import math
+import os
+import random
+import re
+import sys
+def timeConversion(s):
+    p=s[:-2]
+    p1=p[:2] 
+    c=str(int(p1)+12)
+    d=str(int(p1)-12)
+    if(s[-2:]=="PM" and p[:2]!="12"):
+        return p.replace(p1,c) 
+    elif(s[-2:]=="AM" and p[:2]=="12"):
+        return p.replace(p1,d+"0")
+    else:
+        return p
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    s = input()
+    result = timeConversion(s)
+    fptr.write(result+'\n')
+    fptr.close()
 
 5)LONELY INTEGER
 #!/bin/python3
@@ -103,20 +127,20 @@ import os
 import random
 import re
 import sys
-def pangrams(s): 
-   count = [0]*26
-   for i in s:
-       if(not i.isspace()):
-            count[ord(i)-ord('a')]+=1
-            return('pangram')
-       else:
-            return('not pangram')
+def pangrams(s):
+    s=s.replace(' ','')
+    s=s.lower()
+    a=[]
+    for i in s:
+        if i not in a:
+            a.append(i)
+    if(len(a)==26):
+        print("pangram")
+    else:
+        print("not pangram")
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
     s = input()
-    result = pangrams(s)
-    fptr.write(result + '\n')
-    fptr.close()
+    pangrams(s)
 
 12)XOR STRINGS 2
 def strings_xor(s, t):
