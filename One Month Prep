@@ -227,7 +227,7 @@ if __name__ == '__main__':
         fptr.write(result + '\n')
     fptr.close()
 
-11)SUBARRAY DIVISION1
+11)SUBARRAY DIVISION 1
 #!/bin/python3
 import math
 import os
