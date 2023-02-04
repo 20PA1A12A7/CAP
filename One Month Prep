@@ -347,6 +347,107 @@ if __name__ == '__main__':
         fptr.write(str(result) + '\n')
     fptr.close()
 
+##WEEK 2
+
+1)Sales by match
+import math
+import os
+import random
+import re
+import sys
+def sockMerchant(n, ar):
+   l=[] 
+   sum=0
+   ar.sort() 
+   for i in list(set(ar)):
+      x=ar.count(i)  
+      l.append(x)  
+   for i in l:
+    sum=sum+i//2
+   return sum
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    ar = list(map(int, input().rstrip().split()))
+    result = sockMerchant(n, ar)
+    fptr.write(str(result) + '\n')
+    fptr.close() 
+    
+ 2)Zig Zag Sequence
+ def findZigZagSequence(a, n):
+    a.sort()
+    mid = int((n - 1)/2)
+    a[mid], a[n-1] = a[n-1], a[mid]
+
+    st = mid + 1
+    ed = n - 2
+    while(st <= ed):
+        a[st], a[ed] = a[ed], a[st]
+        st = st + 1
+        ed = ed - 1
+
+    for i in range (n):
+        if i == n-1:
+            print(a[i])
+        else:
+            print(a[i], end = ' ')
+    return
+
+test_cases = int(input())
+for cs in range (test_cases):
+    n = int(input())
+    a = list(map(int, input().split()))
+    findZigZagSequence(a, n)
+
+3)Drawing Book
+import math
+import os
+import random
+import re
+import sys
+def pageCount(n, p):
+    k1=p-1
+    k2=n-p
+    if(k1<k2):
+        return math.ceil(k1/2) 
+    else: 
+        if(n%2!=0 and n-1==p):
+            return 0
+        if(n%2==0):
+          return math.ceil(k2/2)
+        return k2//2
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    p = int(input().strip())
+    result = pageCount(n, p)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
+4)Tower Breakers
+import math
+import os
+import random
+import re
+import sys
+def towerBreakers(n, m): 
+    if(n%2==0 or n%2!=0 and m==1):
+        return 2
+    else:
+        return 1
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    t = int(input().strip())
+    for t_itr in range(t):
+        first_multiple_input = input().rstrip().split()
+        n = int(first_multiple_input[0])
+        m = int(first_multiple_input[1])
+        result = towerBreakers(n, m)
+        fptr.write(str(result) + '\n')
+    fptr.close()
+
+
 
       
 
