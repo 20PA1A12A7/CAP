@@ -119,6 +119,44 @@ if __name__ == '__main__':
     a = list(map(int, input().rstrip().split()))
     result = lonelyinteger(a)
     fptr.write(str(result) + '\n')
+    fptr.close() 
+ 
+6)FLIPPING BITS
+import math
+import os
+import random
+import re
+import sys
+def flippingBits(n):
+  l=[]
+  while(n>1):
+    l.append(n%2)
+    n=n//2 
+  l.append(n)
+  c=32-len(l) 
+  l1=str([0]*c+l[::-1])  
+  l1=l1.replace(',','')
+  l1=l1.replace(' ','')
+  l1=l1.replace('[','')
+  l1=l1.replace(']','') 
+  res=''
+  for i in l1:
+    if(i=='0'):
+       res=res+'1'
+    else:
+       res=res+'0' 
+  s=list(res) 
+  s1=[int(i) for i in s] 
+  for i in range(32):
+    s1[i]=s1[i]*(2**(31-i))
+  return sum(s1)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    q = int(input().strip())
+    for q_itr in range(q):
+        n = int(input().strip())
+        result = flippingBits(n)
+        fptr.write(str(result) + '\n')
     fptr.close()
 
 7)DIAGONAL DIFFERENCE
