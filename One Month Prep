@@ -22,7 +22,7 @@ if __name__ == '__main__':
       n = int(input().strip())
       arr = list(map(int, input().rstrip().split()))
       plusMinus(arr)
-      
+========================================================================================================================================================================      
 2)MINI-MAX SUM
 #!/bin/python3
 import math
@@ -42,7 +42,7 @@ def miniMaxSum(arr):
 if __name__ == '__main__':
       arr = list(map(int, input().rstrip().split()))
       miniMaxSum(arr)
-      
+========================================================================================================================================================================
 3)TIME CONVERSION
 import math
 import os
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     result = timeConversion(s)
     fptr.write(result+'\n')
     fptr.close()
-
+========================================================================================================================================================================
 4)SPARSE ARRAYS
 import math
 import os
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     fptr.write('\n'.join(map(str, res)))
     fptr.write('\n')
     fptr.close()
-
+========================================================================================================================================================================
 5)LONELY INTEGER
 #!/bin/python3
 import math
@@ -120,7 +120,7 @@ if __name__ == '__main__':
     result = lonelyinteger(a)
     fptr.write(str(result) + '\n')
     fptr.close() 
- 
+======================================================================================================================================================================= 
 6)FLIPPING BITS
 import math
 import os
@@ -158,7 +158,7 @@ if __name__ == '__main__':
         result = flippingBits(n)
         fptr.write(str(result) + '\n')
     fptr.close()
-
+=======================================================================================================================================================================
 7)DIAGONAL DIFFERENCE
 #!/bin/python3
 import math
@@ -184,7 +184,7 @@ if __name__ == '__main__':
     result = diagonalDifference(arr)
     fptr.write(str(result) + '\n')
     fptr.close()
-
+========================================================================================================================================================================
 8)COUNTING SORT 1
 import math
 import os
@@ -211,7 +211,7 @@ if __name__ == '__main__':
     fptr.write(' '.join(map(str, result)))
     fptr.write('\n')
     fptr.close()
-
+========================================================================================================================================================================    
 9)PANGRAMS
 #!/bin/python3
 import math
@@ -233,7 +233,7 @@ def pangrams(s):
 if __name__ == '__main__':
     s = input()
     pangrams(s)
-    
+========================================================================================================================================================================    
 10)PERMUTING TWO ARRAYS
 import math
 import os
@@ -264,7 +264,7 @@ if __name__ == '__main__':
         result = twoArrays(k, A, B)
         fptr.write(result + '\n')
     fptr.close()
-
+========================================================================================================================================================================
 11)SUBARRAY DIVISION 1
 #!/bin/python3
 import math
@@ -288,7 +288,7 @@ if __name__ == '__main__':
     result = birthday(s, d, m)
     fptr.write(str(result) + '\n')
     fptr.close()
-
+=======================================================================================================================================================================
 12)XOR STRINGS 2
 def strings_xor(s, t):
     res = ""
@@ -301,9 +301,9 @@ def strings_xor(s, t):
 s = input()
 t = input()
 print(strings_xor(s, t))
-
+==========================================================================================================================================================================
 ##MOCK TEST 
-
+===========================================================================================================================================================================
 1)FIND THE MEDIAN 
 import math
 import os
@@ -321,7 +321,7 @@ if __name__ == '__main__':
     result = findMedian(arr)
     fptr.write(str(result) + '\n')
     fptr.close() 
-    
+========================================================================================================================================================================   
 2)FLIPPING THE MATRIX 
 import math
 import os
@@ -346,9 +346,9 @@ if __name__ == '__main__':
         result = flippingMatrix(matrix)
         fptr.write(str(result) + '\n')
     fptr.close()
-
+========================================================================================================================================================================
 ##WEEK 2
-
+========================================================================================================================================================================
 1)SALES BY MATCH
 import math
 import os
@@ -372,7 +372,7 @@ if __name__ == '__main__':
     result = sockMerchant(n, ar)
     fptr.write(str(result) + '\n')
     fptr.close() 
-    
+=========================================================================================================================================================================    
 2)ZIG ZAG SEQUENCE
 def findZigZagSequence(a, n):
    a.sort()
@@ -396,7 +396,7 @@ for cs in range (test_cases):
     n = int(input())
     a = list(map(int, input().split()))
     findZigZagSequence(a, n)
-
+========================================================================================================================================================================
 3)DRAWING BOOK
 import math
 import os
@@ -414,7 +414,6 @@ def pageCount(n, p):
         if(n%2==0):
           return math.ceil(k2/2)
         return k2//2
-
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     n = int(input().strip())
@@ -422,7 +421,7 @@ if __name__ == '__main__':
     result = pageCount(n, p)
     fptr.write(str(result) + '\n')
     fptr.close()
-
+=========================================================================================================================================================================
 4)TOWER BREAKERS
 import math
 import os
@@ -444,7 +443,7 @@ if __name__ == '__main__':
         result = towerBreakers(n, m)
         fptr.write(str(result) + '\n')
     fptr.close()  
-    
+=========================================================================================================================================================================    
 5)CAESAR CIPHER
 import math
 import os
@@ -452,35 +451,21 @@ import random
 import re
 import sys
 def caesarCipher(s, k):
-    s1='abcdefghijklmnopqrstuvwxyz'
-    s2='ABCDEFGHIJKLMNOPQRSTUVWXYZ' 
-    s3=''
-    for i in s:
-       if i in s1:  
-          if(123<=ord(i)+k<=148):
-              s3=s3+chr(ord(i)+k-26)
-          elif(149<=ord(i)+k<=174):
-              s3=s3+chr(ord(i)+k-2*26)
-          elif(175<=ord(i)+k<=200):
-              s3=s3+chr(ord(i)+k-3*26)
-          elif(201<=ord(i)+k<=222):
-              s3=s3+chr(ord(i)+k-4*26)
-          else:
-              s3=s3+chr(ord(i)+k)
-       elif i in s2:
-            if(91<=ord(i)+k<=116):
-               s3=s3+chr(ord(i)+k-26)
-            elif(117<=ord(i)+k<=143):
-               s3=s3+chr(ord(i)+k-2*26)
-            elif(144<=ord(i)+k<=169):
-               s3=s3+chr(ord(i)+k-3*26)
-            elif(170<=ord(i)+k<=191):
-               s3=s3+chr(ord(i)+k-4*26)
-            else:
-               s3=s3+chr(ord(i)+k)
-       else:
-            s3=s3+i
-    return s3
+   s3=''  
+   for i in s:
+      if i in 'abcdefghijklmnopqrstuvwxyz': 
+         k1=ord(i)+k
+         while(k1>122):
+            k1=k1-26
+         s3=s3+chr(k1)
+      elif i in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+         k1=ord(i)+k
+         while(k1>90):
+            k1=k1-26
+         s3=s3+chr(k1)
+      else:
+         s3=s3+i
+   return(s3)
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     n = int(input().strip())
@@ -489,8 +474,7 @@ if __name__ == '__main__':
     result = caesarCipher(s, k)
     fptr.write(result + '\n')
     fptr.close()
-
-    
+=========================================================================================================================================================================
 9)PRIME DATES
 import re
 month = []
@@ -548,7 +532,7 @@ m2 = int(date[4])
 y2 = int(date[5])
 result = findPrimeDates(d1, m1, y1, d2, m2, y2)
 print(result)
-
+=========================================================================================================================================================================
 
 
 
