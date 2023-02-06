@@ -443,7 +443,53 @@ if __name__ == '__main__':
         m = int(first_multiple_input[1])
         result = towerBreakers(n, m)
         fptr.write(str(result) + '\n')
-    fptr.close() 
+    fptr.close()  
+    
+5)CAESAR CIPHER
+import math
+import os
+import random
+import re
+import sys
+def caesarCipher(s, k):
+    s1='abcdefghijklmnopqrstuvwxyz'
+    s2='ABCDEFGHIJKLMNOPQRSTUVWXYZ' 
+    s3=''
+    for i in s:
+       if i in s1:  
+          if(123<=ord(i)+k<=148):
+              s3=s3+chr(ord(i)+k-26)
+          elif(149<=ord(i)+k<=174):
+              s3=s3+chr(ord(i)+k-2*26)
+          elif(175<=ord(i)+k<=200):
+              s3=s3+chr(ord(i)+k-3*26)
+          elif(201<=ord(i)+k<=222):
+              s3=s3+chr(ord(i)+k-4*26)
+          else:
+              s3=s3+chr(ord(i)+k)
+       elif i in s2:
+            if(91<=ord(i)+k<=116):
+               s3=s3+chr(ord(i)+k-26)
+            elif(117<=ord(i)+k<=143):
+               s3=s3+chr(ord(i)+k-2*26)
+            elif(144<=ord(i)+k<=169):
+               s3=s3+chr(ord(i)+k-3*26)
+            elif(170<=ord(i)+k<=191):
+               s3=s3+chr(ord(i)+k-4*26)
+            else:
+               s3=s3+chr(ord(i)+k)
+       else:
+            s3=s3+i
+    return s3
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    s = input()
+    k = int(input().strip())
+    result = caesarCipher(s, k)
+    fptr.write(result + '\n')
+    fptr.close()
+
     
 9)PRIME DATES
 import re
