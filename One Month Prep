@@ -192,17 +192,14 @@ import random
 import re
 import sys
 def countingSort(arr):
-    l=[]
-    l1=[]
-    for i in range(100):
-        l.append(i)
-    for i in l:
-        if i in arr:
-            x=arr.count(i)
-            l1.append(x)
-        else:
-            l1.append(0)
-    return l1     
+   l=[]
+   for i in range(100):
+     if i in arr: 
+        x=arr.count(i)
+        l.append(x) 
+     else:
+        l.append(0)
+   return l  
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     n = int(input().strip())
@@ -475,6 +472,38 @@ if __name__ == '__main__':
     fptr.write(result + '\n')
     fptr.close()
 =========================================================================================================================================================================
+7)DYNAMIC ARRAY 
+import math
+import os
+import random
+import re
+import sys
+def dynamicArray(n, queries):
+    arr=[[] for _ in range(n)]
+    lastanswer=0 
+    l=[]
+    for q,x,y in queries:
+        if(q==1):
+            idx=((x^lastanswer)%n)
+            arr[idx].append(y)
+        else:
+            idx=((x^lastanswer)%n) 
+            lastanswer=arr[idx][y%len(arr[idx])] 
+            l.append(lastanswer)
+    return l
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    first_multiple_input = input().rstrip().split()
+    n = int(first_multiple_input[0])
+    q = int(first_multiple_input[1])
+    queries = []
+    for _ in range(q):
+        queries.append(list(map(int, input().rstrip().split())))
+    result = dynamicArray(n, queries)
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+    fptr.close()
+=========================================================================================================================================================================    
 9)PRIME DATES
 import re
 month = []
