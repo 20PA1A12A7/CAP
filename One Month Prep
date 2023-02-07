@@ -529,6 +529,36 @@ if __name__ == '__main__':
     fptr.write('\n')
     fptr.close()
 =========================================================================================================================================================================    
+8)GRID CHALLENGE
+import math
+import os
+import random
+import re
+import sys
+def gridChallenge(grid):
+    grid=[list(i) for i in grid]
+    row=len(grid)
+    col=len(grid[0])
+    for i in range(row):
+        grid[i].sort()
+    for j in range(col):
+       for i in range(1,row):
+         if not grid[i-1][j]<=grid[i][j]:
+            return "NO"
+    return "YES"
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    t = int(input().strip())
+    for t_itr in range(t):
+        n = int(input().strip())
+        grid = []
+        for _ in range(n):
+            grid_item = input()
+            grid.append(grid_item)
+        result = gridChallenge(grid)
+        fptr.write(result + '\n')
+    fptr.close()
+=========================================================================================================================================================================
 9)PRIME DATES
 import re
 month = []
