@@ -614,7 +614,34 @@ if __name__ == '__main__':
         fptr.write(result + '\n')
     fptr.close()
 =========================================================================================================================================================================
-
+11)RECURSIVE DIGIT SUM
+import math
+import os
+import random
+import re
+import sys
+def superDigit(n, k): 
+    n1=[int(i) for i in list(n)] 
+    n2=str(sum(n1))*k
+    def recursiveDigit(n):
+        sum=0
+        for i in n:
+            sum=sum+int(i)
+        sum=str(sum)
+        if(len(sum)==1):
+            return sum
+        else:
+            return recursiveDigit(sum)
+    return recursiveDigit(n2)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    first_multiple_input = input().rstrip().split()
+    n = first_multiple_input[0]
+    k = int(first_multiple_input[1])
+    result = superDigit(n, k)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+========================================================================================================================================================================
 
 
 
