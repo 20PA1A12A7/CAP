@@ -472,6 +472,31 @@ if __name__ == '__main__':
     fptr.write(result + '\n')
     fptr.close()
 =========================================================================================================================================================================
+6)MAX MIN
+import math
+import os
+import random
+import re
+import sys
+def maxMin(k, arr):
+    arr.sort()
+    min=1e8
+    for i in range(n-k+1):
+        if(abs(arr[i]-arr[i+k-1])<min):
+            min=abs(arr[i]-arr[i+k-1])
+    return min
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    k = int(input().strip())
+    arr = []
+    for _ in range(n):
+        arr_item = int(input().strip())
+        arr.append(arr_item)
+    result = maxMin(k, arr)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+========================================================================================================================================================================
 7)DYNAMIC ARRAY 
 import math
 import os
@@ -562,7 +587,33 @@ y2 = int(date[5])
 result = findPrimeDates(d1, m1, y1, d2, m2, y2)
 print(result)
 =========================================================================================================================================================================
-
+10)SHERLOCK AND ARRAY
+import math
+import os
+import random
+import re
+import sys
+def balancedSums(arr):
+    if(len(arr)==1):
+        return 'YES'
+    else:
+        sum1=sum(arr)
+        sum2=0
+        for i in range(len(arr)):
+            if(sum2==(sum1-arr[i])//2):
+                return 'YES' 
+            sum2=sum2+arr[i]
+        return 'NO'
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    T = int(input().strip())
+    for T_itr in range(T):
+        n = int(input().strip())
+        arr = list(map(int, input().rstrip().split()))
+        result = balancedSums(arr)
+        fptr.write(result + '\n')
+    fptr.close()
+=========================================================================================================================================================================
 
 
 
