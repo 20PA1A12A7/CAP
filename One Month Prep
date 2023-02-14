@@ -693,7 +693,26 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
     fptr.close()
 ========================================================================================================================================================================
-
+#REGULAR108 
+1)TCS6
+n=int(input())
+if(n%2!=0):
+    print(n)
+else:
+    n1=1
+    n2=1
+    for i in range(6,n+1,2):
+        c=n1+n2
+        n1=n2
+        n2=c
+    print(c)
+2)STRING PALINDROME 4
+n=input().lower()
+s=n[::-1]
+if(s==n):
+    print('Palindrome')
+else:
+    print('Not Palindrome')
 
       
 
