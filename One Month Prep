@@ -735,6 +735,29 @@ if(s==n):
 else:
     print('Not Palindrome')
 ========================================================================================================================================================================     
+3)SUPER REDUCED STRING
+import math
+import os
+import random
+import re
+import sys
+def superReducedString(s):
+    l=[] 
+    for i in range(len(s)):
+        if(len(l)==0 or l[-1]!=s[i]):
+            l.append(s[i]) 
+        else:
+            l.pop() 
+    if(len(l)==0):
+        return 'Empty String'
+    return ''.join(l)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    s = input()
+    result = superReducedString(s)
+    fptr.write(result + '\n')
+    fptr.close()
+========================================================================================================================================================================
 4)SIMILAR CHAR 
 n=int(input())
 s=input()
